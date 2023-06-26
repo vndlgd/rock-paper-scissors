@@ -6,7 +6,7 @@ let userScore = 0;
 let computerScore = 0;
 
 
-function GetComputerChoice() {
+function getComputerChoice() {
     // function to return random choice in array
     return choices[Math.floor(Math.random() * choices.length)];
 }

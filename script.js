@@ -101,12 +101,14 @@ function game() {
         let playerSelection = prompt("Enter your choice (rock, paper, scissors):");
         // get computer choice
         let computerSelection = GetComputerChoice();
-        // store the result of that round in results variable
+        // store the result of that round in result variable
         let result = playRound(playerSelection, computerSelection);
-        // display results
+        // display result
         console.log(result);
     }
+    // print whether user won or lost
     printGameWinner();
 }
 
+// play game 
 game();

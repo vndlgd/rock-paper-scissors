@@ -80,7 +80,6 @@ function updateScores(result) {
     }
 }
 
-// it's buggy 
 // print winner of the game
 function printGameWinner() {
     if (userScore > computerScore) {

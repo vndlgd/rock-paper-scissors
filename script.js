@@ -1,21 +1,19 @@
-// declare an array of choices available
+// list of available choices in game
 const choices = ["rock", "paper", "scissors"];
 
-// declare initial score at start of game
+// initial score of users at start of game
 let userScore = 0;
 let computerScore = 0;
 
-
+// retrieve a random choice in choices list to assign to computerSelection
 function getComputerChoice() {
-    // function to return random choice in array
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
-    // declare results variable
     let results = "";
 
-    // get results for whoever wins this current round
+    // store results for whoever wins this current round
     results = getRoundWinner(playerSelection, computerSelection);
 
     // error catching
@@ -28,17 +26,16 @@ function playRound(playerSelection, computerSelection) {
     return results;
 }
 
-// determine who wins each round
 function getRoundWinner(playerSelection, computerSelection) {
     // make user input case insensitive
     playerSelection = playerSelection.toLowerCase();
 
-    // if both users input same choice
+    // if user chooses same choice as computer 
     if (playerSelection === computerSelection) {
         results = "It's a Tie!";
     }
 
-    // user chose rock
+    // if user chooses rock
     else if (playerSelection === "rock") {
         if (computerSelection === "paper") {
             results = "You Lose! Paper beats Rock";
@@ -48,7 +45,7 @@ function getRoundWinner(playerSelection, computerSelection) {
         }
     }
 
-    // user chose paper
+    // if user chooses paper
     else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
             results = "You Win! Paper beats Rock";
@@ -58,7 +55,7 @@ function getRoundWinner(playerSelection, computerSelection) {
         }
     }
 
-    // user chose scissors
+    // if user chooses scissors
     else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
             results = "You Lose! Rock beats Scissors";
@@ -97,16 +94,11 @@ function printGameWinner() {
 function game() {
     // loop 5 rounds 
     for (let i = 0; i < 5; i++) {
-        // prompt user for input
         let playerSelection = prompt("Enter your choice (rock, paper, scissors):");
-        // get computer choice
         let computerSelection = GetComputerChoice();
-        // store the result of that round in result variable
         let result = playRound(playerSelection, computerSelection);
-        // display result
         console.log(result);
     }
-    // print whether user won or lost
     printGameWinner();
 }
 

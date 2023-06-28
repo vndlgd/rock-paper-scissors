@@ -116,6 +116,9 @@ function game() {
     const displayResult = document.querySelector('#displayResult');
     const winner = document.createElement('div');
 
+    const displayScore = document.querySelector('#displayScore');
+    const score = document.createElement('div');
+
     // when button is clicked, playerSelection equals value inside of button 
     document.getElementById('buttons').addEventListener("click", function (e) {
         playerSelection = e.target.textContent;
@@ -125,6 +128,9 @@ function game() {
         // display results on page
         winner.textContent = result;
         displayResult.appendChild(winner);
+        // display score on page
+        score.textContent = `Your Score: ${userScore} Opponent Score: ${computerScore}`;
+        displayScore.appendChild(score);
         // console.log(result);
     });
 

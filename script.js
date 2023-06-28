@@ -92,13 +92,11 @@ function printGameWinner() {
 
 
 function game() {
-    // loop 5 rounds 
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Enter your choice (rock, paper, scissors):");
-        let computerSelection = GetComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        console.log(result);
-    }
+    let playerSelection = prompt("Enter your choice (rock, paper, scissors):");
+    let computerSelection = GetComputerChoice();
+    let result = playRound(playerSelection, computerSelection);
+    console.log(result);
+
     printGameWinner();
 }
 
